@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!-- TODO: Add slightly darker or lighter colors for other states later. -->
+
+    <!-- Button 'on rest' -->
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#ff0eff07" />
+            <stroke android:width="2dp"
+                android:color="#000"/>
+        </shape>
+    </item>
+
+</selector>

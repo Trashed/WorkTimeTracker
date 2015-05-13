@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">WorkTimeTracker</string>
+    <string name="app_name">Work Time Tracker</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="button_start_stop">START</string>
 </resources>
