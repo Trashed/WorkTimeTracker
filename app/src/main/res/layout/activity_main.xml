@@ -8,11 +8,52 @@
 
     <Button
         android:id="@+id/button_start_stop_timer"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:text="@string/button_start_stop"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="@string/start_button_start_string"
         android:layout_marginBottom="24dp"
         android:background="@drawable/round_button"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/textview_work_day_started"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="92dp"
+        android:id="@+id/textView1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/textview_work_day_left"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/textView_work_started"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/textview_time_template"
+        android:id="@+id/textView_work_started"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/textview_time_template"
+        android:id="@+id/textView_work_left"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>

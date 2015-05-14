@@ -3,5 +3,9 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="button_start_stop">START</string>
+    <string name="start_button_start_string">START</string>
+    <string name="start_button_stop_string">STOP</string>
+    <string name="textview_work_day_started">Current work day started at:</string>
+    <string name="textview_work_day_left">Current working time left:</string>
+    <string name="textview_time_template">HH:mm</string>
 </resources>
