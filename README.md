@@ -10,3 +10,5 @@ work time tracking would look something like this:
 	
 CSV file format would be the most ideal option for storing work data since a great number of spreadsheet softwares
 supports CSV format, thus making it easier to compose Excel worksheets for further data handling.
+
+## Gitflow and branching
