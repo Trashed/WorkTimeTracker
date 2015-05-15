@@ -20,6 +20,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView workStartTime;
     private TextView workTimeLeft;
 
+    // TODO: Initialize a WorkTimeController variable here. Stub class for it already created.
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
