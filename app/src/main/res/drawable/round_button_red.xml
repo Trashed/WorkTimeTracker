@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!-- Button 'on rest' -->
+    <item android:state_pressed="false">
+        <shape android:shape="oval">
+            <solid android:color="#ff9c0002" />
+            <stroke android:width="5dp"
+                android:color="#ff680300"/>
+        </shape>
+    </item>
+
+    <!-- Button clicked -->
+    <item android:state_pressed="true">
+        <shape android:shape="oval">
+            <solid android:color="#ffbe0002" />
+            <stroke android:width="5dp"
+                android:color="#ff8c0300"/>
+        </shape>
+    </item>
+
+</selector>

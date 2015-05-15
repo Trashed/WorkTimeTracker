@@ -12,7 +12,7 @@
         android:layout_height="100dp"
         android:text="@string/start_button_start_string"
         android:layout_marginBottom="24dp"
-        android:background="@drawable/round_button"
+        android:background="@drawable/round_button_green"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
