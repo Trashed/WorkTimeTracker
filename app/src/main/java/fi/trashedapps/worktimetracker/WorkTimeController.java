@@ -16,7 +16,9 @@ public class WorkTimeController {
 
     private Calendar calendar;
     private String startTime;
+    private Date startTimeAsDate;
     private String endTime;
+    private Date endTimeAsDate;
     private SimpleDateFormat sdf;
 
     /**
@@ -26,7 +28,9 @@ public class WorkTimeController {
     public WorkTimeController(Context appContext) {
         // TODO: Add stuff here if needed
         calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(System.currentTimeMillis());
         sdf = new SimpleDateFormat("HH:mm");
+        sdf.setCalendar(calendar);
     }
 
     // TODO: Create a method that checks if user tries to log multiple hours within the same day.
@@ -38,7 +42,7 @@ public class WorkTimeController {
      * saves the time value (HH:mm) into a file.
      */
     public void startWorkDay() {
-        Date startTimeAsDate = calendar.getTime();
+        startTimeAsDate = calendar.getTime();
         //SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
         startTime = sdf.format(startTimeAsDate);
     }
@@ -47,7 +51,7 @@ public class WorkTimeController {
      * endWorkDay
      */
     public void endWorkDay() {
-        Date endTimeAsDate = calendar.getTime();
+        endTimeAsDate = calendar.getTime();
 
         endTime = sdf.format(endTimeAsDate);
     }
@@ -80,10 +84,11 @@ public class WorkTimeController {
      * @throws ParseException
      */
     public String calculateWorkingHoursLeft() throws ParseException {
-        Date start = sdf.parse(startTime);
+        //Date start = new Date(sta);
         // This value is 8 hrs because it includes half an hour lunch break.
-        Date fullWorkDay = sdf.parse("08:00");
-        Date end = sdf.parse(convertSecondsToHMmSs(start.getTime() + fullWorkDay.getTime()) + sdf.format(calendar.getTime()));
+        //Date fullWorkDay = sdf.parse("08:00");
+//        Date end = new Date(System.currentTimeMillis());
+//        end.setTime(28800000 - (calendar.getTimeInMillis() - startTimeAsDate.getTime()));
 
         return sdf.format(end);
     }
