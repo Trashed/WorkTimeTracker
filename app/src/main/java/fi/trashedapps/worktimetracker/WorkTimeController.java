@@ -80,21 +80,20 @@ public class WorkTimeController {
      * Calculates the time difference between start time and estimated end time and returns the
      * difference as a string.
      *
-     * @return String retVal
+     * @return Hours left of current work day in a String variable.
      * @throws ParseException
      */
     public String calculateWorkingHoursLeft() throws ParseException {
-        //Date start = new Date(sta);
-        // This value is 8 hrs because it includes half an hour lunch break.
-        //Date fullWorkDay = sdf.parse("08:00");
-//        Date end = new Date(System.currentTimeMillis());
-//        end.setTime(28800000 - (calendar.getTimeInMillis() - startTimeAsDate.getTime()));
+        // Calendar instance for calculating the end time.
+        Calendar c = Calendar.getInstance();
+        c.setTimeInMillis(startTimeAsDate.getTime() + 28800000 - System.currentTimeMillis());
+        Date end = c.getTime();
 
         return sdf.format(end);
     }
 
 
-    private static String convertSecondsToHMmSs(long seconds) {
+    /*private static String convertSecondsToHMmSs(long seconds) {
         long m = (seconds / 60) % 60;
         long h = (seconds / (60 * 60)) % 24;
         return String.format("%d:%02d", h, m);
@@ -102,5 +101,5 @@ public class WorkTimeController {
 
     private static long convertHoursToMs() {
         return 0L;
-    }
+    }*/
 }
