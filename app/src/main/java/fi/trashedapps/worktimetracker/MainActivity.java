@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // TextViews
         workStartTime = (TextView)findViewById(R.id.textView_work_started);
-        workTimeLeft = (TextView)findViewById(R.id.textView_work_left);
+        workTimeLeft = (TextView)findViewById(R.id.textView_work_ended);
 
         // Object for handling work times
         wtc = new WorkTimeController(getApplicationContext());
