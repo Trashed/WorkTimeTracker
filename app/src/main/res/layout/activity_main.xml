@@ -3,7 +3,8 @@
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:background="@color/background_material_dark" >
 
 
     <Button
@@ -12,9 +13,8 @@
         android:layout_height="200dp"
         android:text="@string/start_button_start_string"
         android:textSize="40dp"
-        android:layout_marginBottom="24dp"
         android:background="@drawable/round_button_green"
-        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -22,43 +22,112 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/textview_work_day_started"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="92dp"
-        android:id="@+id/textView1" />
-
-    <!-- TODO: Add TextViews here for Lunch break time tracking -->
-
-
-    <!-- TODO: Change text to "Current work day ended at:" -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/textview_work_day_left"
-        android:id="@+id/textView2"
-        android:layout_below="@+id/textView_work_started"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp" />
+        android:textColor="@color/button_material_light"
+        android:id="@+id/textView1"
+        android:layout_below="@+id/button_start_stop_timer"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/textView_work_started"
+        android:layout_toStartOf="@+id/textView_work_started"
+        android:textStyle="italic" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/textview_time_template"
+        android:textColor="@color/button_material_light"
         android:id="@+id/textView_work_started"
-        android:layout_below="@+id/textView1"
-        android:layout_marginTop="10dp"
-        android:layout_centerHorizontal="true" />
+        android:paddingLeft="20dp"
+        android:layout_below="@+id/button_start_stop_timer"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/textview_work_day_ended"
+        android:textColor="@color/button_material_light"
+        android:id="@+id/textView2"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/textView_work_ended"
+        android:layout_toStartOf="@+id/textView_work_ended"
+        android:textStyle="italic" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/textview_time_template"
-        android:id="@+id/textView_work_left"
+        android:textColor="@color/button_material_light"
+        android:id="@+id/textView_work_ended"
+        android:paddingLeft="20dp"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_toRightOf="@+id/textView1"
+        android:layout_toEndOf="@+id/textView1" />
+
+    <Button
+        android:id="@+id/button_lunch_start_stop"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:text="@string/start_button_start_string"
+        android:textSize="25dp"
+        android:background="@drawable/round_button_green"
         android:layout_below="@+id/textView2"
-        android:layout_marginTop="10dp"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="33dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/textview_lunch_started"
+        android:textColor="@color/button_material_light"
+        android:id="@+id/textView3"
+        android:layout_below="@+id/button_lunch_start_stop"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/textView_lunch_started"
+        android:layout_toStartOf="@+id/textView_lunch_started"
+        android:textStyle="italic" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/textview_time_template"
+        android:textColor="@color/button_material_light"
+        android:id="@+id/textView_lunch_started"
+        android:paddingLeft="20dp"
+        android:layout_below="@+id/button_lunch_start_stop"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/textview_lunch_ended"
+        android:textColor="@color/button_material_light"
+        android:id="@+id/textView4"
+        android:textStyle="italic"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/textview_time_template"
+        android:textColor="@color/button_material_light"
+        android:id="@+id/textView_lunch_ended"
+        android:paddingLeft="20dp"
+        android:layout_alignTop="@+id/textView4"
+        android:layout_toRightOf="@+id/textView3"
+        android:layout_toEndOf="@+id/textView3" />
 
 </RelativeLayout>

@@ -7,7 +7,9 @@
     <string name="start_button_start_string">START</string>
     <string name="start_button_stop_string">STOP</string>
 
-    <string name="textview_work_day_started">Current work day started at:</string>
-    <string name="textview_work_day_left">Current working time left:</string>
+    <string name="textview_work_day_started">Day started at:</string>
+    <string name="textview_work_day_ended">Day ended at:</string>
     <string name="textview_time_template">HH:mm</string>
+    <string name="textview_lunch_started">Lunch started at:</string>
+    <string name="textview_lunch_ended">Lunch ended:</string>
 </resources>
