@@ -19,9 +19,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     // Widgets
     private Button startStopButton;
+    private Button startStopLunchButton;
     // TODO: Remember to add holder variables for those two TextViews showing the time.
     private TextView workStartTime;
     private TextView workEndTime;
+    private TextView lunchStartTime;
+    private TextView lunchStopTime;
 
     // TODO: Initialize a WorkTimeController variable here. Stub class for it already created.
     private WorkTimeController wtc;
@@ -34,9 +37,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Makes necessary init steps for the app
         initializeApplication();
 
+        // Buttons
         startStopButton = (Button)findViewById(R.id.button_start_stop_timer);
         startStopButton.setTag("start");
         startStopButton.setOnClickListener(this);
+
+        startStopLunchButton = (Button) findViewById(R.id.button_lunch_start_stop);
+        startStopLunchButton.setTag("start");
+        startStopLunchButton.setOnClickListener(this);
+
 
         // TextViews
         workStartTime = (TextView)findViewById(R.id.textView_work_started);
@@ -77,32 +86,50 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+
+        //Button button = (Button) v;
+        final int id = v.getId();
         final String status = (String)v.getTag();
+
+        // Modify button from Start state to Stop state
         if(status.equals("start")) {
-            // Modify button from Start state to Stop state
-            startStopButton.setText(R.string.start_button_stop_string);
-            startStopButton.setBackgroundResource(R.drawable.round_button_red);
-            startStopButton.setTag("stop");
+            if (id == R.id.button_start_stop_timer) {     // Work day start button
+                startStopButton.setText(R.string.start_button_stop_string);
+                startStopButton.setBackgroundResource(R.drawable.round_button_red);
+                startStopButton.setTag("stop");
 
-            // Get start time and set time as a string to the TextView
-            wtc.startWorkDay();
-            workStartTime.setText(wtc.getWorkStartTime());
+                // Get start time and set time as a string to the TextView
+                wtc.startWorkDay();
+                workStartTime.setText(wtc.getWorkStartTime());
 
-            // Start a thread which updates the other TextView showing time of working hours left.
-            //updateWorkEndingTime();
+                // Start a thread which updates the other TextView showing time of working hours left.
+                //updateWorkEndingTime();
+            }
+            else if (id == R.id.button_lunch_start_stop) {       // Lunch start button
+                startStopLunchButton.setText(R.string.start_button_stop_string);
+                startStopLunchButton.setBackgroundResource(R.drawable.round_button_red);
+                startStopLunchButton.setTag("stop");
+            }
+
         }
+        // Modify button from Stop state to Start state
         else {
-            // Modify button from Stop state to Start state
-            startStopButton.setText(R.string.start_button_start_string);
-            startStopButton.setBackgroundResource(R.drawable.round_button_green);
-            startStopButton.setTag("start");
+            if (id == R.id.button_start_stop_timer) {     // Work day start button
+                startStopButton.setText(R.string.start_button_start_string);
+                startStopButton.setBackgroundResource(R.drawable.round_button_green);
+                startStopButton.setTag("start");
 
-            // Get end time
-            wtc.endWorkDay();
-            workEndTime.setText(wtc.getWorkEndTime());
+                // Get end time
+                wtc.endWorkDay();
+                workEndTime.setText(wtc.getWorkEndTime());
+            }
+            else if (id == R.id.button_lunch_start_stop) {       // Lunch start button
+                startStopLunchButton.setText(R.string.start_button_start_string);
+                startStopLunchButton.setBackgroundResource(R.drawable.round_button_green);
+                startStopLunchButton.setTag("start");
+            }
         }
     }
-
 
     /*private void updateWorkEndingTime() {
         // Update the TextView before starting the thread
