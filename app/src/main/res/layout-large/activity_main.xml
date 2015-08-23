@@ -74,8 +74,9 @@
         android:text="@string/start_button_start_string"
         android:textSize="25sp"
         android:background="@drawable/round_button_green"
-        android:layout_above="@+id/textView4"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="67dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -85,7 +86,7 @@
         android:textColor="@color/button_material_light"
         android:id="@+id/textView3"
         android:textStyle="italic"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/textView_lunch_started"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -124,9 +125,8 @@
         android:id="@+id/textView_lunch_ended"
         android:paddingLeft="20dp"
         android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/button_lunch_start_stop"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_toRightOf="@+id/textView1"
-        android:layout_toEndOf="@+id/textView1" />
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

@@ -68,10 +68,8 @@ public class WorkTimeController {
      * getWorkEndTime
      * @return
      */
-    // TODO: Is this method needed?
     public String getWorkEndTime() {
-        // TODO: Create a static variable or store the work end time value into SharedPrefs.
-        return null;
+        return endTime;
     }
 
     /**

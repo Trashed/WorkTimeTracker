@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button startStopButton;
     // TODO: Remember to add holder variables for those two TextViews showing the time.
     private TextView workStartTime;
-    private TextView workTimeLeft;
+    private TextView workEndTime;
 
     // TODO: Initialize a WorkTimeController variable here. Stub class for it already created.
     private WorkTimeController wtc;
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // TextViews
         workStartTime = (TextView)findViewById(R.id.textView_work_started);
-        workTimeLeft = (TextView)findViewById(R.id.textView_work_ended);
+        workEndTime = (TextView)findViewById(R.id.textView_work_ended);
 
         // Object for handling work times
         wtc = new WorkTimeController(getApplicationContext());
@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             workStartTime.setText(wtc.getWorkStartTime());
 
             // Start a thread which updates the other TextView showing time of working hours left.
-            updateWorkEndingTime();
+            //updateWorkEndingTime();
         }
         else {
             // Modify button from Stop state to Start state
@@ -99,14 +99,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             // Get end time
             wtc.endWorkDay();
+            workEndTime.setText(wtc.getWorkEndTime());
         }
     }
 
 
-    private void updateWorkEndingTime() {
+    /*private void updateWorkEndingTime() {
         // Update the TextView before starting the thread
         try {
-            workTimeLeft.setText(wtc.calculateWorkingHoursLeft());
+            workEndTime.setText(wtc.calculateWorkingHoursLeft());
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -125,7 +126,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     @Override
                     public void run() {
                         try {
-                            workTimeLeft.setText(wtc.calculateWorkingHoursLeft());
+                            workEndTime.setText(wtc.calculateWorkingHoursLeft());
                         } catch (ParseException e) {
                             e.printStackTrace();
                         }
@@ -134,7 +135,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         };
         new Thread(runnable).start();
-    }
+    }*/
 
 
     private void initializeApplication() {
