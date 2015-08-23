@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initializeApplication();
 
         // Buttons
-        startStopButton = (Button)findViewById(R.id.button_start_stop_timer);
+        startStopButton = (Button) findViewById(R.id.button_start_stop_timer);
         startStopButton.setTag("start");
         startStopButton.setOnClickListener(this);
 
@@ -48,16 +48,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         // TextViews
-        workStartTime = (TextView)findViewById(R.id.textView_work_started);
-        workEndTime = (TextView)findViewById(R.id.textView_work_ended);
-
-        // Object for handling work times
-        wtc = new WorkTimeController(getApplicationContext());
+        workStartTime = (TextView) findViewById(R.id.textView_work_started);
+        workEndTime = (TextView) findViewById(R.id.textView_work_ended);
+        lunchStartTime = (TextView) findViewById(R.id.textView_lunch_started);
+        lunchStopTime = (TextView) findViewById(R.id.textView_lunch_ended);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+
+        // Object for handling work times. Creating it here in onResume ensures that it
+        // always gets created.
+        wtc = new WorkTimeController(getApplicationContext());
 
         // TODO: When activity resumes from the background, calculate how many hours are left of the current working day, and insert that value in its TextView.
     }
@@ -99,7 +102,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startStopButton.setTag("stop");
 
                 // Get start time and set time as a string to the TextView
-                wtc.startWorkDay();
+                //wtc.startWorkDay();
                 workStartTime.setText(wtc.getWorkStartTime());
 
                 // Start a thread which updates the other TextView showing time of working hours left.
