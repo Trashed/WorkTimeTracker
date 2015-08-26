@@ -48,7 +48,6 @@ public class WorkTimeController {
      */
     public void startWorkDay() {
         startTimeAsDate = calendar.getTime();
-        //startTime = sdf.format(startTimeAsDate);
     }
 
     /**
@@ -56,7 +55,6 @@ public class WorkTimeController {
      */
     public void endWorkDay() {
         endTimeAsDate = calendar.getTime();
-        //endTime = sdf.format(endTimeAsDate);
     }
 
     public void startLunch() {
