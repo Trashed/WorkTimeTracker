@@ -14,12 +14,17 @@ import java.util.Locale;
  */
 public class WorkTimeController {
 
+    // Variables and objects needed by WorkTimeController
     private Calendar calendar;
-    private String startTime;
     private Date startTimeAsDate;
-    private String endTime;
     private Date endTimeAsDate;
+    private Date lunchStartTimeAsDate;
+    private Date lunchStopTimeAsDate;
+//    private String startTime;
+//    private String endTime;
     private SimpleDateFormat sdf;
+
+    private FileHandler fileHandler;
 
     /**
      * Constructor
@@ -43,8 +48,7 @@ public class WorkTimeController {
      */
     public void startWorkDay() {
         startTimeAsDate = calendar.getTime();
-        //SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
-        startTime = sdf.format(startTimeAsDate);
+        //startTime = sdf.format(startTimeAsDate);
     }
 
     /**
@@ -52,8 +56,15 @@ public class WorkTimeController {
      */
     public void endWorkDay() {
         endTimeAsDate = calendar.getTime();
+        //endTime = sdf.format(endTimeAsDate);
+    }
 
-        endTime = sdf.format(endTimeAsDate);
+    public void startLunch() {
+        lunchStartTimeAsDate = calendar.getTime();
+    }
+
+    public void stopLunch() {
+        lunchStopTimeAsDate = calendar.getTime();
     }
 
     /**
@@ -61,7 +72,7 @@ public class WorkTimeController {
      * @return String startTime
      */
     public String getWorkStartTime() {
-        return startTime;
+        return sdf.format(startTimeAsDate);
     }
 
     /**
@@ -69,7 +80,15 @@ public class WorkTimeController {
      * @return
      */
     public String getWorkEndTime() {
-        return endTime;
+        return sdf.format(endTimeAsDate);
+    }
+
+    public String getLunchStopTime() {
+        return sdf.format(lunchStopTimeAsDate);
+    }
+
+    public String getLunchStartTime() {
+        return sdf.format(lunchStartTimeAsDate);
     }
 
     /**

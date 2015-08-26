@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startStopButton.setTag("stop");
 
                 // Get start time and set time as a string to the TextView
-                //wtc.startWorkDay();
+                wtc.startWorkDay();
                 workStartTime.setText(wtc.getWorkStartTime());
 
                 // Start a thread which updates the other TextView showing time of working hours left.
@@ -112,6 +112,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startStopLunchButton.setText(R.string.start_button_stop_string);
                 startStopLunchButton.setBackgroundResource(R.drawable.round_button_red);
                 startStopLunchButton.setTag("stop");
+
+                wtc.startLunch();
+                lunchStartTime.setText(wtc.getLunchStartTime());
             }
 
         }
@@ -130,6 +133,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startStopLunchButton.setText(R.string.start_button_start_string);
                 startStopLunchButton.setBackgroundResource(R.drawable.round_button_green);
                 startStopLunchButton.setTag("start");
+
+                wtc.stopLunch();
+                lunchStopTime.setText(wtc.getLunchStopTime());
             }
         }
     }
